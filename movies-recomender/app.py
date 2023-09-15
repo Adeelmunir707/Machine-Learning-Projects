@@ -1,73 +1,79 @@
-# we can use flask, but we will use streamlit library for our API
-
-import streamlit as st
-import pickle
+from textblob import TextBlob
 import pandas as pd
-import requests
+import streamlit as st
+import cleantext
+import emoji
+
+st.title("Sentiment Web Analyzer")
+background_image = 'image.jpg'
+st.image(background_image, use_column_width=True)
+
+st.header("Now Scale Your Thoughts")
+
+with st.expander("Analyze Your Text"):
+    text = st.text_input("Text here:")
+
+    if text:
+        blob = TextBlob(text)
+        p= round(blob.sentiment.polarity,2)
+        st.write('Polarity :',p)
+        if p>=0.1:
+               st.write(emoji.emojize("Positive Speech :grinning_face_with_big_eyes:"))
+        elif p==0.0:
+            st.write(emoji.emojize("Neutral Speech :zipper-mouth_face:"))
+        else :
+            st.write(emoji.emojize("Negative Speech :disappointed_face:"))
+        st.write('Subjectivity', round(blob.sentiment.subjectivity,2))
 
 
-def recommend(movie):
-    movie_index = movies[movies['title'] == movie].index[0]
-    distances = similarity[movie_index]
-    movies_list = sorted(list(enumerate(distances)), reverse=True, key=lambda x: x[1])[1:6]
+    pre = st.text_input('Clean Your Text: ')
+    if pre:
+        st.write(cleantext.clean(pre, clean_all= False, extra_spaces=True ,
+                                 stopwords=True ,lowercase=True ,numbers=True , punct=True))
 
-    recomended_movies = []
-    recomended_movies_poster = []
+with st.expander('Analyze Excel files'):
+    st.write("_**Note**_ : Your file must contain the column Name'Tweets' that contain the text to be analyzed.")
+    upl = st.file_uploader('Upload file')
 
-    for i in movies_list:
-        movie_id = movies.iloc[i[0]].movie_id                                 # similar movie index will replace i[0]
-        recomended_movies.append(movies.iloc[i[0]].title)      # now extract the movies names of these 5 indices
-    # fetching poster for movies from API
-        recomended_movies_poster.append(fetch(movie_id))
-    return recomended_movies,recomended_movies_poster
+    def score(x):
+        blob1 = TextBlob(x)
+        return blob1.sentiment.polarity
 
-def fetch(movie_id):
-    url = "https://api.themoviedb.org/3/movie/{}?api_key=8265bd1679663a7ea12ac168da84d2e8&language=en-US".format(movie_id)
-    data = requests.get(url)
-    data = data.json()
-    poster_path = data['poster_path']
-    full_path = "https://image.tmdb.org/t/p/w500/" + poster_path
-    return full_path
+#
+    def analyze(x):
+        if x >= 0.5:
+            return 'Positive'
+        elif x <= -0.5:
+            return 'Negative'
+        else:
+            return 'Neutral'
 
+#
+    if upl:
+        df = pd.read_excels(upl)
+        # del df['Unnamed: 0']
+        df['score'] = df['tweets'].apply(score)
+        df['analysis'] = df['score'].apply(analyze)
+        st.write(df.head(10))
 
-# movies file
-movies_dict =  pickle.load(open('movies_dict.pkl','rb'))          # loading movies list and opeingin it in read binary
-movies = pd.DataFrame(movies_dict)
+        @st.cache
+        def convert_df(df):
+            # IMPORTANT: Cache the conversion to prevent computation on every rerun
+            return df.to_csv().encode('utf-8')
 
-# similarity file
-similarity= pickle.load(open('similarity.pkl','rb'))          # loading movies list and opeingin it in read binary
+        csv = convert_df(df)
 
-st.title("Movies Recomender System")
+        st.download_button(
+            label="Download data as CSV",
+            data=csv,
+            file_name='sentiment.csv',
+            mime='text/csv',
+        )
+st.write("\n\n\n\n\n")
 
-# getting the movies list from the movie_recomender.ipynb to here,
-# using pikkle library
-selected_movie_name = st.selectbox(
-    'Now Get What You Want',
-    (movies['title'].values)
-)
-
-# button
-if st.button('Recommend', 'Thanks'):
-    names,posters = recommend(selected_movie_name)
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.text(names[0])
-        st.image(posters[0])
-
-    with col2:
-        st.text(names[1])
-        st.image(posters[1])
-
-    with col3:
-        st.text(names[2])
-        st.image(posters[2])
-
-    with col4:
-        st.text(names[3])
-        st.image(posters[3])
-
-    with col5:
-        st.text(names[4])
-        st.image(posters[4])
-
-
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("\t\t\t\t\t\tCopy© 2023 Adeel Munir")
