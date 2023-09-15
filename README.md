@@ -7,7 +7,7 @@ These tasks are the actually Machine Learning Projects for the Coding Samurai In
 Welcome to my GitHub repository where I've documented three exciting data science projects! In these projects, I have explored various aspects of machine learning and natural language processing to tackle real-world problems. Below, you'll find a brief overview of each project, along with links to their respective code and documentation.
 
 ## 1. Flower Classification using Iris Dataset
-
+![Flower Classification](https://www.google.com/search?sca_esv=565628317&rlz=1C1CHZN_enPK1027PK1027&q=iris+flower+classification&tbm=isch&source=lnms&sa=X&ved=2ahUKEwjz1MCEu6yBAxXGjqQKHdEhACUQ0pQJegQIDBAB&biw=1366&bih=643&dpr=1#imgrc=GA4sryjYDWUQHM)
 ### Project Overview
 In this project, I have built a flower classification model using the famous Iris dataset. The Iris dataset contains measurements of various iris flower species, and we use machine learning to classify them accurately.
 
@@ -17,7 +17,7 @@ In this project, I have built a flower classification model using the famous Iri
 
 ## 2. Movie Recommendation System
 
-![Movie Recommendation](https://github.com/Adeelmunir707/Coding-Samurai-inturship-tasks/tree/main/movies-recomender)
+![Movie Recommendation](https://www.google.com/search?sca_esv=565618840&rlz=1C1CHZN_enPK1027PK1027&q=movies+recommender+system&tbm=isch&source=lnms&sa=X&ved=2ahUKEwjf19XmuqyBAxXY2AIHHclfBBcQ0pQJegQIChAB&biw=1366&bih=643&dpr=1#imgrc=kK1utoqK4x6WjM&imgdii=UQKfay4o2xI6UM)
 
 ### Project Overview
 In this project, I've created two movie recommendation systems: one based on cosine similarity and another using content-based filtering. These recommendation systems help users discover new movies based on their preferences and similarities between movies.
@@ -29,7 +29,7 @@ In this project, I've created two movie recommendation systems: one based on cos
 
 ## 3. Sentiment Analysis on Twitter Tweets
 
-![Sentiment Analysis](https://cdn.pixabay.com/photo/2018/08/21/23/29/smile-3623454_960_720.jpg)
+![Sentiment Analysis](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.expressanalytics.com%2Fblog%2Fsocial-media-sentiment-analysis%2F&psig=AOvVaw0tKwToJAtc042oEsnsoSIL&ust=1694861790385000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCODclaq6rIEDFQAAAAAdAAAAABAD)
 
 ### Project Overview
 In this project, I have developed a sentiment analysis model to analyze Twitter tweets. The model classifies tweets into positive, negative, or neutral sentiments, providing insights into public opinions on various topics.
