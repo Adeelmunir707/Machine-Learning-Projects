@@ -39,7 +39,7 @@ In this project, I have developed a sentiment analysis model to analyze Twitter 
 I have also created user-friendly web interfaces for the movie recommender and sentiment analyzer using Streamlit. These interfaces make it easy for users to interact with the models and get recommendations or sentiment analysis results.
 
 - **Movie Recommender UI:** [Movie Recommender Interface](https://github.com/Adeelmunir707/Coding-Samurai-inturship-tasks/blob/main/movies-recomender/app.py)
-- **Sentiment Analyzer UI:** [Sentiment Analyzer Interface](https://github.com/yourusername/sentiment-analyzer-streamlit)
+- **Sentiment Analyzer UI:** [Sentiment Analyzer Interface](https://github.com/Adeelmunir707/Coding-Samurai-inturship-tasks/blob/main/Sentiment-analysis/app.py)
 
 Feel free to explore each project, run the code, and contribute to their development. If you have any questions or feedback, please don't hesitate to reach out!
 
