@@ -34,7 +34,7 @@ In this project, I have developed a sentiment analysis model to analyze Twitter 
 - **Code:** [Sentiment Analysis on Twitter](https://github.com/Adeelmunir707/Coding-Samurai-inturship-tasks/blob/main/Sentiment-analysis/social-media-sentiment-analysis.ipynb)
 
 ### Web app to analyze yout thoughts
-- **Fixpulse:** [Web-app](https://fixpulse-a20b0ce7da36.herokuapp.com/)
+- **Pulsefixer:** [Web-app](https://pulsefixer.streamlit.app/)
 
 
 ## 4. Bonus: User Interface with Streamlit
