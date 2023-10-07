@@ -1,6 +1,4 @@
-# Coding-Samurai-inturnship-tasks
-These tasks are the actually Machine Learning Projects for the Coding Samurai Intership Programm September
--2023
+# Machine Learning Projects
 
 # Project Showcase
 
@@ -25,7 +23,7 @@ In this project, I've created two movie recommendation systems: one based on cos
 - **Cosine Similarity - Code:** [Movie Recommender using Cosine Similarity](https://github.com/Adeelmunir707/Coding-Samurai-inturship-tasks/blob/main/movies-recomender/movie-recomendation-system.ipynb)
 - **Documentation:** Explore the Jupyter Notebooks in the respective repositories for detailed information on each recommendation approach.
 
-## 3. Sentiment Analysis on Twitter Tweets
+## 3. Sentiment Analysis on Twitter Tweets Dataset
 
 ### Project Overview
 In this project, I have developed a sentiment analysis model to analyze Twitter tweets. The model classifies tweets into positive, negative, or neutral sentiments, providing insights into public opinions on various topics.
