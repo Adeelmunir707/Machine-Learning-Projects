@@ -2,7 +2,7 @@
 
 # Project Showcase
 
-Welcome to my GitHub repository where I've documented three exciting data science projects! In these projects, I have explored various aspects of machine learning and natural language processing to tackle real-world problems. Below, you'll find a brief overview of each project, along with links to their respective code and documentation.
+Welcome to my GitHub repository where I've documented three exciting Machine Learning projects! In these projects, I have explored various aspects of machine learning and natural language processing to tackle real-world problems. Below, you'll find a brief overview of each project, along with links to their respective code and documentation.
 
 ## 1. Flower Classification using Iris Dataset
 
